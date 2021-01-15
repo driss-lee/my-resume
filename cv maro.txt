@@ -1,0 +1,40 @@
+﻿Expériences :
+ Octobre 2019 - Présent 
+
+
+Ingénieur Machine Learning Engineer & Python Developer                  chez AIR&D.
+
+
+* Projet:  Concevoir et réaliser un Modèle intelligent qui permet d’apprendre les lois physique de mécanique des ﬂuids, capable de prédire la dispersion de pollution en temps réel sur la région du bas-rhin.
+* Intervention aux phases : Segmentation des images , Analyse des séries temporelles et filtrage des données des capteurs Air&d sur les sites. 
+Ainsi l’administration de multiples bases de données, déploiement de la solution Deep Learning en ligne (environnement isolé sur un conteneur docker).
+* Développement d’un worker en NodeJs qui écoutera la file d’attente (ActiveMQ), puis fera les calculs et renverra les résultats qui seront inséré dans Alfresco.
+
+
+* Méthodes utilisées: CNN, Resnet, Unet, MultiResUnet, Random Forest, 
+Linear Regression.
+
+
+
+
+ Avril - septembre 2019    Projet de fin d'étude au sein de l’entreprise Orisun . 
+
+
+* Projet : Pour une meilleure qualité de données pour ses clients. Orisun a décidé d’imputer les données manquantes, en se basant sur les méthodes de prévision en économie, mais aussi les méthodes d’intelligence artificielle, Deep Learning en particulier. 
+* Méthodes utilisées: Exploratory Data Analysis , Forecasting, Transfer Learning, Incremental Learning (online Learning) ,ARIMA, VAR,  Predictions models(LSTM, GRU).
+
+
+Mai - Novembre 2017 Stage au sein du Laboratoire LIMIARF .
+
+
+* Projet : Application pour la Traduction en temps réel du Langage des Signes : Proposition d’une méthode permettant la reconnaissance des gestes des mains de l’utilisateur, en temps réel, en utilisant le capteur Kinect. 
+Accompli: Elaboration d’une application qui permet de modéliser les informations captées par les caméras du Kinect et les traduire en données prête pour traitement., Classification des gestes est basée sur l'entraînement d’un modèle SVM sur bag-of words approach de deux descripteurs : SIFT et SURF, Optimisation du système de manière à ne faire aucun calcul ou traitement qu’après un mouvement d’un corps devant la caméra.
+
+
+
+
+Juillet-Novembre 2016 Stage au sein de l’entreprise NEAR MEDIA. 
+
+
+   * Projet: Algorithmes d’Apprentissage pour la Détection de Polarité des Tweets: Présentation d’approches d’analyse de sentiment des tweets standards et dialectales. Ces tweets sont plein de sentiment, mais très bruités et riches en vocabulaire à cause de la diversité des langues. 
+   * Accompli: Réduction de Données en se basant sur l’analyse de composante principale PCA, Tokenization pour séparer les mots et la normalisation pour rassembler les mots en commun, Stemming servant à regrouper les mots de la même famille dans un seul stem, Détection de la polarité d’un texte en utilisant SVM et MLP.
