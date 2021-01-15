@@ -1,4 +1,15 @@
-﻿Expériences :
+﻿summary :
+
+
+Ingénieur en MAchine learning et développeur Python avec une expérience dans la construction et le déploiement de modèles MAchine Learning
+Construire également des applications web à l'échelle et communiquer efficacement les résultats aux parties prenantes.
+Participer activement à toutes les phases du cycle de vie de la science des données. Avoir de l'expérience dans la recherche, l'amélioration et le prototypage de technologies de pointe pour atteindre des objectifs commerciaux.
+Je suis titulaire de 2 masters, l'un spécialisé en informatique, le second en intelligence artificielle de l'Université de Bourgogne France.
+
+
+Traduit avec www.DeepL.com/Translator (version gratuite)
+
+Expériences :
  Octobre 2019 - Présent 
 
 
@@ -13,7 +24,6 @@ Ainsi l’administration de multiples bases de données, déploiement de la solu
 
 * Méthodes utilisées: CNN, Resnet, Unet, MultiResUnet, Random Forest, 
 Linear Regression.
-
 
 
 
