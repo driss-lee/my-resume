@@ -16,16 +16,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 a {
-  color: #2e4049;
+  color: #2d7788;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #10171a;
+  color: #1a454f;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -35,13 +35,26 @@ a:hover {
 a:focus {
   text-decoration: none;
 }
-
+li a { display: block; }
 p {
   line-height: 1.5;
 }
 
+img.profile {
+  max-width: 100%;
+  max-height: 100%;
+}
+.marquee ul li a{
+    display: inline-block; 
+    height: 80%;
+}
+
+.marquee ul li a img {
+  max-height: 100%;
+}
+
 .wrapper {
-  background: #4B6A78;
+  background: #42A8C0;
   max-width: 960px;
   margin: 0 auto;
   margin-top: 30px;
@@ -52,10 +65,10 @@ p {
 }
 
 .sidebar-wrapper {
-  background: #4B6A78;
+  background: #42A8C0;
   position: absolute;
   right: 0;
-  width: 240px;
+  width: 250px;
   height: 100%;
   min-height: 800px;
   color: #fff;
@@ -187,7 +200,7 @@ p {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 500;
-  color: #2e4049;
+  color: #2d7788;
   position: relative;
   margin-top: 0;
   margin-bottom: 20px;
@@ -207,7 +220,7 @@ p {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  background: #2e4049;
+  background: #2d7788;
   text-align: center;
   font-size: 16px;
   position: relative;
@@ -293,7 +306,7 @@ p {
 }
 
 .skillset .theme-progress-bar {
-  background: #5f8697;
+  background: #68bacd;
 }
 
 .footer {

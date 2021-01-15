@@ -40,7 +40,7 @@ p {
   line-height: 1.5;
 }
 
-img {
+img.profile {
   max-width: 100%;
   max-height: 100%;
 }
@@ -51,6 +51,7 @@ img {
 
 .marquee ul li a img {
   max-height: 100%;
+  
 }
 
 .wrapper {
