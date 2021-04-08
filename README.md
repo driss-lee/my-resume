@@ -1,4 +1,4 @@
 
-## My resume page : https://opethermb.github.io/MyCv/
+## My resume page : https://driss-lee.github.io/my-resume/
 
 
