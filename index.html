@@ -86,6 +86,39 @@
                 </div>
                 <div class="details">
                     <p>
+                        <p>
+                            <li><b>PAX8 API Integration:</b></li>
+                            PAX8, un partenaire majeur sur le marché, a migré vers un modèle de subscription, obligeant Vade à s'adapter pour maintenir
+                            cette collaboration stratégique. Ainsi, nous avons lancé un projet visant à intégrer les API de PAX8 dans notre système existant
+                            pour faciliter la transition d'un modèle de licence vers un modèle de subscription. 
+                        </p>
+    
+                        <ul>
+                            <li>
+                                Rédaction et validation de spécifications techniques détaillées en collaboration avec les équipes produit et de développement.                              
+                            </li>
+                            <li>
+                                Développement d'une webhook pour authentifier et recevoir les demandes de provisionnement de PAX8.
+                            </li>
+                            <li>
+                                Création de files d'attente NATS avec Jetstream pour les identifiants (pull) et les demandes de provisionnement (push).
+                            </li>
+                            <li>
+                                Mise en place d'un cronjob dans le service webhook pour mettre à jour et publier les identifiants régulièrement dans NATS.
+                            </li>
+                            <li>
+                                Développement d'un worker en Go pour traiter des demandes de provisionnement et appels API du Partner Portal.
+                            </li>
+                            <li>
+                                Modification de la logique métier pour supporter le modèle de subscription et provisionnement des subscriptions dans le Partner Portal.
+                            </li>
+                        </ul>
+    
+                        <p>
+                        <div style="font-weight:500;">Environnement technique: Go, Mysql, Rest, NATS, Gitlab, Docker, ArgoCD, Swagger.
+                        </div>
+                        </p>
+                    <p>
                     <p>
                         <li><b>Partner Portal:</b></li>
                         La plateforme web Partner Portal est conçue pour administrer le cycle de vie des licences des solutions de cybersécurité,
@@ -95,9 +128,6 @@
                     </p>
 
                     <ul>
-                        <li>
-                            Rédaction et validation de spécifications techniques détaillées en collaboration avec les équipes produit et de développement.
-                        </li>
                         <li>
                             Développement et optimisation continue d'API robustes et sécurisées pour le provisionnement des licences.                         
                         </li>
