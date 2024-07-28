@@ -87,28 +87,44 @@
                 <div class="details">
                     <p>
                     <p>
-                        <li><b>Microservice Scan Documents:</b></li>
-                        Dans le cadre d'un programme de stabilisation et d'amélioration des applications internes.
-                        Inditex a choisi de migrer un micro
-                        service gérer par un environnement de travail Atlassian vers le nouvel environnement Github
-                        Entreprise adapté afin de créer un cadre
-                        opérationnel utilisant les approches API-First et GitOps. Le micro service permet aux
-                        gérants de magasins Stradivarius d'appeler
-                        des services web proposant la gestion de documents administratifs dans un serveur NAS en
-                        encodant et cryptant des fichiers.
+                        <li><b>Partner Portal:</b></li>
+                        La plateforme web Partner Portal est conçue pour administrer le cycle de vie des licences des solutions de cybersécurité,
+                        notamment les services de sécurité des emails (M365 et GWS) proposés par l'entreprise Vade.
+                        Ce projet repose sur une architecture microservices, permettant la gestion des licences d'essai et de production,
+                        la gestion des clients sur plusieurs tenants, ainsi que l'accès aux ressources marketing et techniques.
                     </p>
 
                     <ul>
                         <li>
-                            Mise en place d’une spécification OpenAPI 3 pour assurer l’API-First approche.
+                            Rédaction et validation de spécifications techniques détaillées en collaboration avec les équipes produit et de développement,
+                            pour garantir la clarté, la faisabilité et la qualité des nouvelles fonctionnalités.
+                        </li>
+                        <li>
+                            Conception, développement et optimisation continue d'API robustes et sécurisées pour le provisionnement des licences,
+                             afin d'assurer une performance et une évolutivité maximales.                            
+                        </li>
+                        <li>
+                            Gestion proactive et réactive des incidents de production pour minimiser les interruptions de service,
+                            en analysant les problèmes récurrents et en mettant en place des solutions préventives pour améliorer la stabilité du système.
+                        </li>
+                        <li>
+                            Création et mise en œuvre de tests fonctionnels en Python et des tests unitaires en Go,
+                            pour assurer la qualité et la fiabilité du code.
+                        </li>
+                        <li>
+                            Intégration d'OpenTelemetry pour la collecte de données de traçage distribuées, et utilisation de Jaeger pour visualiser et analyser les traces,
+                            facilitant le diagnostic des problèmes de performance et de latence dans l'architecture microservices.
+                        </li>
+                        <li>
+                            Conception, développement et configuration de métriques de performance et de santé des services pour Prometheus,
+                            ainsi que la mise en place d'alertes basées sur les métriques collectées pour une surveillance proactive des systèmes,
+                            et création de tableaux de bord interactifs avec Grafana pour visualiser les données et faciliter l'analyse.
                         </li>
                     </ul>
 
                     <p>
-                    <div style="font-weight:500;">Environnement technique: Java 11, Spring Boot, Spring Data
-                        MongoDb, Maven, Rest,
-                        Keycloak, MongoDb, Vault,
-                        GitHub Enterprise, Spinnaker, OpenShift Enterprise, Sonar, Swagger, JFrog, Junit5, Mockito.
+                    <div style="font-weight:500;">Environnement technique: Go, Pyhton, Mysql, MongoDb, Casandra, InfluxDb, Rest,
+                        Gitlab, Docker, ArgoCD, Prometheus, Kibana, OpenTelemetry, Jaeger, Sonar, Swagger.
                     </div>
                     </p>
             </div>
@@ -434,7 +450,7 @@
                         <h3 class="level-title"> Base de données :</h3>
                         <div class="details">
                             <p>
-                                MySQL, Oracle, MongoDb, Casandra.
+                                MySQL, Oracle, MongoDb, Casandra, InfluxDb.
                             </p>
                         </div>
 
@@ -449,11 +465,11 @@
                         <div class="details">
                             <p>
                                 GitHub Entreprise, GitLab, Jenkins, Docker, Spinnaker, ArgoCD, Openshift Entreprise,
-                                Sonar, Nexus, Jfrog.
+                                Sonar, Nexus.
                             </p>
                         </div>
 
-                        <h3 class="level-title"> Logging / Monitoring / Tracing </h3>
+                        <h3 class="level-title">  Observability </h3>
                         <div class="details">
                             <p>
                                 Kibana, Grafana, Prometheus, OpenTelemetry, Jaeger
