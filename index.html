@@ -29,7 +29,7 @@
             <div class="profile-container">
                 <img class="profile" src="assets/images/profile.jpg" alt="" />
                 <h1 class="name">Driss <br> EL ABBADI</h1>
-                <h3 class="tagline">JAVA/Spring Boot Backend Developer</h3>
+                <h3 class="tagline">Backend GO/JAVA Developer</h3>
             </div>
             <!--//profile-container-->
 
@@ -53,7 +53,6 @@
                 <ul class="list-unstyled interests-list">
                     <li>English <span class="lang-desc"></span></li>
                     <li>French <span class="lang-desc"></span></li>
-                    <li>Arabic <span class="lang-desc"></span></li>
                 </ul>
             </div>
 
@@ -76,75 +75,42 @@
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">JAVA/Spring Boot Backend Consultant</h3>
-                            <div class="time">January 2023 - Present</div>
+                            <h3 class="job-title">Backend GO Developer</h3>
+                            <div class="time">June 2023 - Present</div>
                             
                         </div>
                         <!--//upper-row-->
-                        <div class="company">Adservio, Paris France</div>
+                        <div class="company">Vade (Full Remote), Paris France</div>
                     </div>
-                </div>
-
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">JAVA/Spring Boot Backend Developer</h3>
-                            <div class="time">May 2021 - December 2022</div>
-                        </div>
-                        <!--//upper-row-->
-                        <div class="company">NTT Data - Mission at Inditex, Casablanca Morocco</div>
-                    </div>
-                    <!--//meta-->
                     <div class="details">
                         <p>
                         <p>
-                            <li><b>Microservice Scan Documents:</b></li>
-                            As part of a program to stabilize and improve internal applications. Inditex chose to migrate a micro service managed
-                            by an Atlassian work environment to the new adapted Github Enterprise environment in order to create an operational framework
-                            using API-First and GitOps approaches. The micro service allows Stradivarius store managers to call web services offering 
-                            the management of administrative documents in a NAS server by encoding and encrypting files.
+                            <li><b>PAX8 API Integration:</b></li>
+                            Vade was acquired by German cybersecurity company Hornet Security, leading to a transition from the legacy licensing model
+                            to the subscription model adapted by the parent company for its cybersecurity products. For Vade to successfully migrate,
+                            it was necessary to get their partners to adopt this new model, starting with their main partner, PAX8.                       
                         </p>
 
                         <ul>
                             <li>
-                                Implementation of an OpenAPI 3 specification to ensure the API-First approach.
+                                Wrote and validated detailed technical specifications in collaboration with the product and development teams.  
                             </li>
                             <li>
-                                Development of REST CRUD web services for the management of administrative documents.
+                                Developed a webhook to authenticate and receive PAX8 provisioning requests.        
                             </li>
                             <li>
-                                NAS Server configuration.
+                                Created NATS queues with Jetstream for credentials (pull) and provisioning requests (push).
                              </li>
                             <li>
-                                API Gateway Kong configuration.
+                                Set up a cronjob in the webhook service to update and publish credentials regularly in NATS.
                             </li>
                             <li>
-                                Development of an OAuth2 authorization module and OpenId connect authentication.
+                                Developed a Go worker to process provisioning requests and API calls from the Partner Portal.
                             </li>
                             <li>
-                                Implementing data access methods with Spring Data MongoDb.
-                            </li>
-                            <li>
-                                Management of the configuration cache with Ehcache.
-                            </li>
-                            <li>
-                                Analysis and correction of anomalies reported on Jira.
-                            </li>
-                            <li>
-                                Writing functions for unit tests with Junit 5 and Mockito.
-                            </li>
-                            <li>
-                                Code quality validation with SONAR.
+                                Created functional tests in Python and unit tests in Go.    
                             </li>
                         </ul>
-
-                        <p>
-                        <div style="font-weight:500;">Technical environment: Java 11, Spring Boot, Spring Data
-                            MongoDb, Maven, Rest,
-                            Keycloak, MongoDb, Vault,
-                            GitHub Enterprise, Spinnaker, OpenShift Enterprise, Sonar, Swagger, JFrog, Junit5, Mockito.
-                        </div>
-                        </p>
 
                         </p>
                         <p>
@@ -156,9 +122,6 @@
                         </p>
 
                         <ul>
-                            <li>
-                                Development of an OAuth2 authorization module.
-                            </li>
                             <li>
                                 Development of budget management services.
                             </li>
@@ -178,7 +141,93 @@
                                 Development of sales history and budget tracking services.
                             </li>
                             <li>
-                                Implementing data access methods with Spring Data JPA.
+                                Management of the configuration cache with Ehcache.
+                            </li>
+                            <li>
+                                Analysis and correction of anomalies reported on Jira.
+                            </li>
+                            <li>
+                                Writing functions for unit tests with Junit 5 and Mockito.
+                            </li>
+                        </ul>
+                        </p>
+
+                        <p>
+                        <p>
+                        <div style="font-weight:500;">Technical environment: Java 11, Spring Boot, Spring Data JPA, Maven, REST, MySQL,
+                            MongoDb, Gitlab, Vault, Keycloak, Docker, GitHub Enterprise, Spinnaker, OpenShift 
+                            Entreprise, Sonar, Swagger, JFrog, Junit5, Mockito. </div>
+                        </p>
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">JAVA/Spring Boot Backend Developer</h3>
+                            <div class="time">May 2021 - December 2022</div>
+                        </div>
+                        <!--//upper-row-->
+                        <div class="company">NTT Data - Mission at Inditex, Casablanca Morocco</div>
+                    </div>
+                    <!--//meta-->
+                    <div class="details">
+                        <p>
+                        <p>
+                            <li><b>Microservice Scan Documents:</b></li>
+                            As part of a program to stabilize and improve internal applications. Inditex chose to migrate a micro service managed
+                            by an Atlassian work environment to the new adapted Github Enterprise environment in order to create an operational framework
+                            using GitOps approache. The micro service allows Stradivarius store managers to call web services offering 
+                            the management of administrative documents in a NAS server by encoding and encrypting images.
+                        </p>
+
+                        <ul>
+                            <li>
+                                API Gateway Kong configuration.
+                            </li>
+                            <li>
+                                Development of an OAuth2 authorization module and OpenId connect authentication.
+                            </li>
+                            <li>
+                                Development of REST CRUD web services for the management of administrative documents.
+                            </li>
+                            <li>
+                                NAS Server configuration.
+                             </li>
+                            <li>
+                                Writing functions for unit tests with Junit 5 and Mockito.
+                            </li>
+                        </ul>
+
+                        </p>
+                        <p>
+                        <p>
+                            <li><b>Microservice Sales Book:</b></li>
+                            Inditex expressed the need to adapt and develop new functionalities in a micro service to improve the budget and sales
+                            of Stradivarius stores. The micro service allows Stradivarius store managers to call web services that manage the store's
+                            sales book in order to adapt to business needs.
+                        </p>
+
+                        <ul>
+                            <li>
+                                Development of budget management services.
+                            </li>
+                            <li>
+                                Development of sales management services.
+                            </li>
+                            <li>
+                                Development of observation management services.
+                            </li>
+                            <li>
+                                Development of observation management services.
+                            </li>
+                            <li>
+                                Development of sales report and budget management services.
+                            </li>
+                            <li>
+                                Development of sales history and budget tracking services.
                             </li>
                             <li>
                                 Management of the configuration cache with Ehcache.
@@ -189,52 +238,14 @@
                             <li>
                                 Writing functions for unit tests with Junit 5 and Mockito.
                             </li>
-                            <li>
-                                Code Quality Validation with SONAR.
-                            </li>
                         </ul>
-
-                        <p>
-                        <div style="font-weight:500;">Technical environment: Java 11, Spring Boot, Spring Data JPA,
-                            Maven, Rest, MySQL,
-                            Bitbucket, Vault, Keycloak, Bamboo, Spinnaker,
-                            OpenShift Entreprise, Sonar, Swagger, JFrog, Junit5, Mockito. </div>
-                        </p>
                         </p>
 
-
                         <p>
                         <p>
-                            <li><b>Security Module:</b></li>
-                            This mission consists of ensuring the migration of a security service implementing Google ReCaptcha to the Google ReCaptcha
-                            Enterprise version, since Inditex's services exceed the quota imposed by Google. In order to maintain and have the basic
-                            applications evaluated, Inditex expressed the need to adapt this security service to the paid version of reCaptcha by
-                            applying the Whitelist mechanism, as well as ensuring the concealment of the CAPTCHA secret key in the logs.
-                        </p>
-
-                        <ul>
-                            <li>
-                                Analysis and maintenance (evolutionary/corrective) of errors and exceptions reported on Kibana.
-                            </li>
-                            <li>
-                                Analysis and correction of anomalies reported on Jira.
-                            </li>
-                            <li>
-                                Participate in the improvement of existing applications by developing REST webservices.
-                            </li>
-                            <li>
-                                Code refactoring to improve performance.
-                            </li>
-                            <li>
-                                Manual API testing.
-                            </li>
-                        </ul>
-
-                        <p>
-                        <div style="font-weight:500;">Technical environment: Java 11, Spring Boot, Hibernate, Maven,
-                            Rest, WildFly,
-                            MySQL, Liquibase,
-                            Bitbucket, Bamboo, Sonar, Swagger, Kibana, JFrog. </div>
+                        <div style="font-weight:500;">Technical environment: Java 11, Spring Boot, Spring Data JPA, Maven, REST, MySQL,
+                            MongoDb, Gitlab, Vault, Keycloak, Docker, GitHub Enterprise, Spinnaker, OpenShift 
+                            Entreprise, Sonar, Swagger, JFrog, Junit5, Mockito. </div>
                         </p>
 
                         </p>
@@ -273,6 +284,12 @@
                                 Development of a Java batch, generator of event reports of validated accounting documents.
                             </li>
                             <li>
+                                Development of business reporting services.
+                            </li>
+                            <li>
+                                Development of mailing services.
+                            </li>
+                            <li>
                                 Creation of schema, tables, indexes and sequences with SQL scripts.
                             </li>
                             <li>
@@ -296,56 +313,12 @@
                         </ul>
                         </p><br>
                         <p>
-                            
+            
                         <p>
-                            <li><b>Validation of international transfers:</b></li>
-                            Implementation of a notification system to warn customers of overspending in the event of the opening of international transfers.
-                        </p>
-
-                        <ul>
-                            <li>
-                                Technical feasibility study and impact analysis.
-                            </li>
-                            <li>
-                                Implementation of the architecture of the solution.
-                            </li>
-                            <li>
-                                Development of a batch in Java for the extraction of daily transfers.
-                            <li>
-                                Design and production of an EAR deliverable (EJB, Servlet) meeting the functional specifications, by requesting the web services of the information system.
-                            </li>
-                            <li>
-                                Creation of schema, tables, indexes and sequences with SQL scripts.
-                            </li>
-                            <li>
-                                Generation and correction of entities from the database.
-                            </li>
-                            <li>
-                                Development of business reporting services.
-                            </li>
-                            <li>
-                                Development of mailing services.
-                            </li>
-                            <li>
-                                Automation of build and deployment scripts.
-                            </li>
-                            <li>
-                                Writing functions for unit tests with Junit 5 and Mockito.
-                            </li>
-                            <li>
-                                Acceptance of web services tests by SoapUI.
-                            </li>
-                            <li>
-                                Code Quality Validation with SONAR.
-                            </li>
-                        </ul>
-
-                        <p>
-
-                        <b>Technical environment: JAVA/JEE (EJB3), Spring, Hibernate,
-                            Maven, SOAP,
-                            DevBooster(C#/.net),
-                            HTML, CSS, JavaScript, XML, WebSphere, Oracle 11, Gitlab, Jenkins, Sonar, Nexus.
+                        <b>
+                            Technical environment:  JAVA/JEE (EJB3), Spring, Hibernate, Maven, SOAP,
+                            DevBooster(C#/.net), HTML, CSS, JavaScript, XML, WebSphere, Oracle 11, Gitlab,
+                            Jenkins, Sonar, Nexus, Junit5, Mockito.
                         </b>
 
                         </p>
@@ -399,7 +372,7 @@
                         <h3 class="level-title">Language:</h3>
                         <div class="details">
                             <p>
-                                HTMl5, CSS3, JavaScript, PHP, C, C#(.net), JAVA/JEE, SQL.
+                                GO, JAVA, PYTHON, C#, HTMl5, CSS3, JavaScript, SQL.
                             </p>
                         </div>
                         <h3 class="level-title"> Framework:</h3>
@@ -423,29 +396,29 @@
                         <h3 class="level-title"> Database:</h3>
                         <div class="details">
                             <p>
-                                Oracle, MySQL, MongoDb.
+                                MySQL, Oracle, MongoDb, Casandra, InfluxDb.
                             </p>
                         </div>
 
                         <h3 class="level-title"> Test:</h3>
                         <div class="details">
                             <p>
-                                Junit, Mockito, Jasmin, Karma.
+                                Junit, Mockito, Pytest.
                             </p>
                         </div>
 
                         <h3 class="level-title"> CI/CD: </h3>
                         <div class="details">
                             <p>
-                                GitHub Entreprise, GitLab, Jenkins, Bamboo, Docker, Spinnaker, Openshift Entreprise,
-                                Sonar, Nexus, Jfrog.
+                                GitHub Entreprise, GitLab, Jenkins, Docker, Spinnaker, ArgoCD, Openshift Entreprise,
+                                Sonar, Nexus.
                             </p>
                         </div>
 
                         <h3 class="level-title"> Logging/Monitoring: </h3>
                         <div class="details">
                             <p>
-                                Kibana, Grafana.
+                                Kibana, Grafana, Prometheus, OpenTelemetry, Jaeger.
                             </p>
                         </div>
 
