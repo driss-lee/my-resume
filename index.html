@@ -168,16 +168,15 @@
                         <p>
                         <p>
                             <li><b>Microservice Scan Documents:</b></li>
-                            Dans le cadre d'un programme de stabilisation et d'amélioration des applications internes, Inditex a décidé de migrer un microservice
-                            de l'environnement de travail Atlassian vers l'environnement GitHub Enterprise nouvellement adapté. Cette migration visait à
-                            établir un cadre opérationnel utilisant l'approche GitOps. Le microservice permet aux responsables des magasins Stradivarius
-                            de gérer les documents administratifs en codant et en cryptant les fichiers stockés sur un serveur NAS via des services Web.
+                            Développement d'un microservice destiné à permettre aux responsables de magasins Stradivarius de gérer efficacement les documents administratifs.
+                            Ce microservice fournit des fonctionnalités d'encodage et de cryptage des fichiers pour assurer un stockage sécurisé sur un serveur NAS.
+                            Grâce à un ensemble de services Web robustes, les responsables de magasins peuvent facilement télécharger, récupérer et gérer ces documents, garantissant ainsi
+                            à la fois sécurité et accessibilité.
                         </p>
 
                         <ul>
                             <li>
-                                API Gateway Kong configurée pour gérer et sécuriser le microservice, y compris la configuration du routage,
-                                load balancing, ratelimiting et des mécanismes d'authentification.     
+                                Configuration d'API Gateway Kong, y compris routage, load balancing, rate limiting et des mécanismes d'authentification.     
                             </li>
                             <li>
                                 Développement d’un module d’authorisation OAuth2 et d’authentification OpenId connect.
@@ -186,8 +185,7 @@
                                 Développement des services web REST CRUD pour la gestion des documents administratifs.
                             </li>
                             <li>
-                                Configuration du serveur NAS pour le stockage des documents numérisés en configurant des répertoires partagés,
-                                des contrôles d'accès et une connectivité réseau, garantissant ainsi un stockage sécurisé et efficace des documents.    
+                                Configuration des répertoires partagés et des contrôles d'accès pour le serveur NAS.    
                             </li>
                             <li>
                                 Écriture des fonctions pour les tests unitaires avec Junit 5 et Mockito.
