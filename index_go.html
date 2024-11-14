@@ -28,7 +28,7 @@
         <div class="sidebar-wrapper">
             <div class="profile-container">
                 <h1 class="name">Driss <br> EL ABBADI</h1>
-                <h3 class="tagline">Développeur Backend JAVA</h3>
+                <h3 class="tagline">Développeur Backend GO/JAVA</h3>
             </div>
             <!--//profile-container-->
 
@@ -75,7 +75,7 @@
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Développeur Backend JAVA/Spring Boot</h3>
+                            <h3 class="job-title">Développeur Backend Go</h3>
                             <div class="time">Juin 2023 - Présent</div>
                         </div>
                         <!--//upper-row-->
@@ -99,23 +99,24 @@
                                 Mise en place d’une spécification OpenAPI 3 pour assurer l’API-First approche.
                             </li>
                             <li>
-                                Développement d'une webhook pour authentifier et recevoir les demandes de provisionnement de PAX8 en utilisant Spring Security.
+                                Développement d'une webhook pour authentifier et recevoir les demandes de provisionnement de PAX8.
                             </li>
                             <li>
-                                Création de files d'attente dans RabbitMQ avec des files dédiées aux identifiants (pull) et aux demandes de provisionnement (push).
+                                Création de files d'attente NATS avec Jetstream pour les identifiants (pull) et les demandes de provisionnement (push).
                             </li>
                             <li>
-                                Mise en place d'un cronjob, assurant la mise à jour et la publication régulière des identifiants.
+                                Mise en place d'un cronjob dans le service webhook pour mettre à jour et publier les identifiants régulièrement dans NATS.
                             </li>
                             <li>
-                                Développement d'un service en Java pour traiter les demandes de provisionnement et interfacer avec l'application de gestion des abonnements de Hornet Security.                            </li>
+                                Développement d'un worker en Go pour traiter les demandes de provisionnement et solliciter l'application de gestion des abonnements de Hornet Security.
+                            </li>
                             <li>
-                                Création de tests fonctionnels en Python et de tests unitaires avec JUnit et Mockito.
+                                Création de tests fonctionnels en Python et de tests unitaires en Go.
                             </li>
                         </ul>
     
                         <p>
-                        <div style="font-weight:500;">Environnement technique: Java (Spring Boot, Security), Mysql, Redis, REST, RabbitMQ, Gitlab, Docker, Vault, ArgoCD, Swagger, Sonar, Pytest.
+                        <div style="font-weight:500;">Environnement technique: Go, Mysql, Redis, REST, NATS, Gitlab, Docker, Vault, ArgoCD, Swagger, Sonar, Pytest.
                         </div>
                         </p>
                     <p>
@@ -132,7 +133,7 @@
                             Développement et optimisation continue d'API robustes et sécurisées pour le provisionnement des licences.                         
                         </li>
                         <li>
-                            Création et mise en œuvre de tests fonctionnels en Python et de tests unitaires avec JUnit et Mockito.
+                            Création et mise en œuvre de tests fonctionnels en Python et de tests unitaires en Go.
                         </li>
                         <li>
                             Intégration d'OpenTelemetry pour la collecte de données de traçage et les visualiser avec Jaeger.
@@ -146,8 +147,8 @@
                     </ul>
 
                     <p>
-                    <div style="font-weight:500;">Environnement technique: Java (Spring Boot), Mysql, MongoDb, Casandra, InfluxDb, REST,
-                        RabbitMQ, Gitlab, Docker, ArgoCD, Kibana, Prometheus, Grafana, OpenTelemetry, Jaeger, Sonar, Swagger, Pytest.
+                    <div style="font-weight:500;">Environnement technique: Go, Mysql, MongoDb, Casandra, InfluxDb, REST,
+                        NSQ, Gitlab, Docker, ArgoCD, Kibana, Prometheus, Grafana, OpenTelemetry, Jaeger, Sonar, Swagger, Pytest.
                     </div>
                     </p>
             </div>
