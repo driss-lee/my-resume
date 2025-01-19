@@ -28,7 +28,7 @@
         <div class="sidebar-wrapper">
             <div class="profile-container">
                 <h1 class="name">Driss <br> EL ABBADI</h1>
-                <h3 class="tagline">Développeur Backend GO/JAVA</h3>
+                <h3 class="tagline">Développeur Backend JAVA</h3>
             </div>
             <!--//profile-container-->
 
@@ -75,7 +75,7 @@
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Développeur Backend Go</h3>
+                            <h3 class="job-title">Développeur Backend JAVA/Spring Boot</h3>
                             <div class="time">Juin 2023 - Présent</div>
                         </div>
                         <!--//upper-row-->
@@ -85,73 +85,71 @@
                 <div class="details">
                     <p>
                         <p>
-                            <li><b>Marketplace-Gateway:</b></li>
-                            Le projet vise à simplifier l’intégration des produits Hornet Security pour les marketplaces. Elles envoient uniquement des notifications
-                            (création, conversion, annulation) à notre gateway. La gateway prend en charge les actions nécessaires côté Hornet Security.
-                            Cette solution est transparente pour les marketplaces, sans nécessiter d'intégration produit spécifique.              
+                            <li><b>PAX8 API Integration:</b></li>
+                            Vade a été acquis par l'entreprise de cybersécurité allemande Hornet Security, entraînant une transition du modèle de licences legacy
+                            vers le modèle de subscription adapté par la société mère pour ses produits de cybersécurité. Pour que Vade réussir la migration,
+                            il était nécessaire de faire adopter ce nouveau modèle à leurs partenaires, en commençant par leur principal partenaire, PAX8.
                         </p>
     
                         <ul>
                             <li>
-                                Collaboration inter-équipes (produit, développement et QA) pour rédiger des spécifications techniques détaillées et valider les solutions implémentées.                           
+                                Rédaction et validation de spécifications techniques détaillées en collaboration avec les équipes produit et de développement.                              
                             </li>
                             <li>
-                                Conception et documentation API avec OpenAPI 3 pour favoriser une approche API-First.  
+                                Mise en place d’une spécification OpenAPI 3 pour assurer l’API-First approche.
                             </li>
                             <li>
-                                Développement d’un webhook sécurisé permettant aux marketplaces d’envoyer des notifications (création, conversion, annulation) via des appels API.
+                                Développement d'une webhook pour authentifier et recevoir les demandes de provisionnement de PAX8 en utilisant Spring Security.
                             </li>
                             <li>
-                                Gestion asynchrone des notifications via RabbitMQ, avec traitement et envoi des résultats aux marketplaces.
+                                Mise en place de files dédiées pour les identifiants (pull) et les demandes de provisionnement (push) avec RabbitMQ.
                             </li>
                             <li>
-                                Développement d’un worker en Go pour traiter les notifications, effectuer les actions nécessaires et interagir avec les systèmes internes, tels que CP et Subman.                          
+                                Mise en place d'un cronjob, assurant la mise à jour et la publication régulière des identifiants.
                             </li>
                             <li>
-                                Mise en place de tests fonctionnels avec Python et tests unitaires avec Go pour valider la fiabilité et les performances des services.
+                                Développement d'un service en Java pour traiter les demandes de provisionnement et interfacer avec l'application de gestion des abonnements de Hornet Security. 
                             </li>
                             <li>
-                                Mise en place de pipelines CI/CD avec Docker, GitLab CI, ArgoCD et Vault pour automatiser les tests, le déploiement, la gestion des versions et la sécurisation des secrets.                            
+                                Création de tests fonctionnels en Python et de tests unitaires avec JUnit et Mockito.
                             </li>
                         </ul>
     
                         <p>
-                        <div style="font-weight:500;">Environnement technique: Go, Redis, REST, RabbitMQ, Gitlab, Docker, Vault, ArgoCD, Swagger, Sonar, Pytest.
+                        <div style="font-weight:500;">Environnement technique: Java 17 (Spring Boot, Security), Mysql, Redis, REST, RabbitMQ, Gitlab, Docker, Vault,
+                            ArgoCD, Swagger, Junit, Mockito, Sonar, Pytest.
                         </div>
                         </p>
                     <p>
                     <p>
                         <li><b>Partner Portal:</b></li>
-                        Le Partner Portal est une plateforme web dédiée à la gestion complète du cycle de vie des licences pour les solutions de cybersécurité (M365 et GWS).
-                        Ce projet s’appuie sur une architecture microservices pour gérer les licences d’essai et de production, les clients multi-tenant
-                        et l’accès aux ressources marketing et techniques.
+                        La plateforme web Partner Portal est conçue pour administrer le cycle de vie des licences des solutions de cybersécurité,
+                        notamment les services de sécurité des emails (M365 et GWS) proposés par l'entreprise Vade.
+                        Ce projet repose sur une architecture microservices, permettant la gestion des licences d'essai et de production,
+                        la gestion des clients sur plusieurs tenants, ainsi que l'accès aux ressources marketing et techniques.
                     </p>
 
                     <ul>
                         <li>
-                            Collaboration inter-équipes (frontend, produit, SRE) pour répondre aux besoins métier et assurer l’intégration des solutions.
+                            Développement et optimisation continue d'API robustes et sécurisées pour le provisionnement des licences.                         
                         </li>
                         <li>
-                            Développement et optimisation d’APIs sécurisées et performantes pour le provisionnement des licences et la gestion des cycles de vie.                         
+                            Création de tests fonctionnels en Python et de tests unitaires avec JUnit et Mockito.
                         </li>
                         <li>
-                            Intégration de NATS pour synchroniser les données entre le Partner Portal et des systèmes externes (Salesforce, Scheduler, DocuSign) via des messages asynchrones.
+                            Intégration d'OpenTelemetry pour la collecte de données de traçage et les visualiser avec Jaeger.
                         </li>
                         <li>
-                            Rédaction de tests unitaires en Go et fonctionnels automatisés en Python pour valider la fiabilité des fonctionnalités développées.
+                            Conception et configuration de métriques de Prometheus, avec des alertes et des tableaux de bord Grafana.
                         </li>
                         <li>
-                            Profiling, monitoring et tracing avec OpenTelemetry (Jaeger), Prometheus (Grafana) et optimisation des services backend pour
-                            améliorer la latence et la scalabilité.                 
-                        </li>
-                        <li>
-                            Gestion proactive et réactive des incidents de production via des outils comme Jira et Kibana pour garantir une haute disponibilité.
+                            Gestion proactive et réactive des incidents de production remontées sur Jira.
                         </li>
                     </ul>
 
                     <p>
-                    <div style="font-weight:500;">Environnement technique: Go, Mysql, MongoDb, Casandra, InfluxDb, REST,
-                        NATS, Gitlab, Docker, ArgoCD, Kibana, Prometheus, Grafana, OpenTelemetry, Jaeger, Sonar, Swagger, Pytest.
+                    <div style="font-weight:500;">Environnement technique: Java 17 (Spring Boot), Mysql, MongoDb, Casandra, InfluxDb, REST,
+                        RabbitMQ, Gitlab, Docker, ArgoCD, Kibana, Prometheus, Grafana, OpenTelemetry, Jaeger, Sonar, Junit, Mockito, Swagger, Pytest.
                     </div>
                     </p>
             </div>
@@ -173,7 +171,7 @@
                             <li><b>Microservice Scan Documents:</b></li>
                             Développement d'un microservice pour permettre aux responsables de magasins Stradivarius de gérer les documents administratifs.
                             Le microservice encode et crypte les fichiers pour un stockage sécurisé sur un serveur NAS. Via des services Web, les responsables peuvent
-                            facilement télécharger, récupérer et gérer ces documents, assurant ainsi leur sécurité et accessibilité.
+                            facilement gérer ces documents, assurant ainsi leur sécurité et accessibilité.
                         </p>
 
                         <ul>
@@ -370,13 +368,13 @@
                         <h3 class="level-title">Language :</h3>
                         <div class="details">
                             <p>
-                                GO, JAVA, C#, HTMl5, CSS3, JavaScript, SQL.
+                                JAVA, C#, HTMl5, CSS3, JavaScript, SQL.
                             </p>
                         </div>
                         <h3 class="level-title"> Framework :</h3>
                         <div class="details">
                             <p>
-                                Spring (MVC, Boot, Data JPA, Batch).
+                                Spring (MVC, Boot, Security, Data JPA, Batch).
                             </p>
                         </div>
                         <h3 class="level-title">Serveur d’application :</h3>
