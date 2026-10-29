@@ -84,42 +84,50 @@
                 </div>
                 <div class="details">
                     <p>
-                        <p>
-                            <li><b>Marketplace-Gateway:</b></li>
-                            Le projet vise à simplifier l’intégration des produits DELL et HP pour les marketplaces. Elles envoient uniquement des notifications
-                            (création, conversion, annulation) à notre gateway. La gateway prend en charge les actions nécessaires côté Redesign.
-                            Cette solution est transparente pour les marketplaces, sans nécessiter d'intégration produit spécifique.              
-                        </p>
-    
-                        <ul>
-                            <li>
-                                Collaboration inter-équipes (produit, développement et QA) pour rédiger des spécifications techniques détaillées et valider les solutions implémentées.                           
-                            </li>
-                            <li>
-                                Conception et documentation API avec OpenAPI 3 pour favoriser une approche API-First.  
-                            </li>
-                            <li>
-                                Développement d’un webhook sécurisé permettant aux marketplaces d’envoyer des notifications (création, conversion, annulation) via des appels API.
-                            </li>
-                            <li>
-                                Gestion asynchrone des notifications via RabbitMQ, avec traitement et envoi des résultats aux marketplaces.
-                            </li>
-                            <li>
-                                Développement d’un worker en Go pour traiter les notifications, effectuer les actions nécessaires et interagir avec les systèmes internes, tels que CP et Subman.                          
-                            </li>
-                            <li>
-                                Mise en place de tests fonctionnels avec Python et tests unitaires avec Go pour valider la fiabilité et les performances des services.
-                            </li>
-                            <li>
-                                Mise en place de pipelines CI/CD avec Docker, GitLab CI, ArgoCD et Vault pour automatiser les tests, le déploiement, la gestion des versions et la sécurisation des secrets.                            
-                            </li>
-                        </ul>
-    
-                        <p>
-                        <div style="font-weight:500;">Environnement technique: Go, REST, RabbitMQ, Gitlab, Docker, Redis, Vault, ArgoCD, Swagger, Sonar, Pytest.
-                        </div>
-                        </p>
+                        <strong>Plateforme Redesign (Marketplace, Assets, Unified API) :</strong>
+                        Écosystème de microservices cloud-native qui forme la plateforme client de Redesign :
+                        Marketplace e-commerce B2B (Dell, HP, Microsoft, Apple), asset management et Unified Portal.
+                    </p>
+
+                    <ul>
+                        <li>Conception de microservices Go en clean architecture, avec une approche API-First (OpenAPI 3).</li>
+                        <li>Intégration de l'Authentication Service (JWT, SSO OIDC, MFA) et de l'Authorization Service (RBAC multi-tenant), derrière une API Gateway APISIX.</li>
+                        <li>Mise en place d'une architecture event-driven sur Kafka (Avro) avec Transactional Outbox et consumers idempotents.</li>
+                        <li>Développement de la Marketplace : catalogue, orders, invoices, Search Engine hybride et paiements Stripe (3-D Secure, Stripe Tax, recurring subscriptions, webhooks idempotents).</li>
+                        <li>Implémentation du subscription lifecycle : fulfilment worker de provisioning des licences Microsoft (polling, retries, rollback) et monitor de détection des écarts de facturation.</li>
+                        <li>Gestion des assets : asset management (bulk import, contracts, lifecycle) et modification du nombre de licences Microsoft.</li>
+                        <li>Développement de la Unified API et de la User API : companies, users, invitations, applications ; profils, memberships et payment methods maintenus par events.</li>
+                        <li>Automatisation de la synchronisation des données Dell, Salesforce et Microsoft par cronjobs (Argo Workflows).</li>
+                        <li>Déploiement GitOps sur Kubernetes (ArgoCD, Kustomize), avec migrations de schéma en production et rollouts par feature flags.</li>
+                        <li>Mise en place de la CI/CD avec GitHub Actions (tests, Trivy, govulncheck) et du monitoring avec OpenTelemetry, Prometheus, Loki et Grafana.</li>
+                    </ul>
+
                     <p>
+                        <div style="font-weight:500;">Environnement technique : Go, REST, OpenAPI 3, PostgreSQL, Redis, Kafka, Avro, APISIX, OpenTelemetry, Prometheus, Loki, Grafana, Docker, Kubernetes, ArgoCD, GitHub Actions.</div>
+                    </p>
+
+                    <p>
+                        <strong>Re AI (Plateforme Agentique IA) :</strong>
+                        Plateforme d'agent IA interne basée sur Claude, utilisée en production dans Slack et sur le web.
+                    </p>
+
+                    <ul>
+                        <li>Connexions : SaaS via OAuth (Slack, Jira, Confluence, GitHub, Salesforce, Microsoft, Monday, Ramp), infrastructure (Kubernetes, FortiGate, switches réseau, OpenStack), et intégration générique via OpenAPI specs et MCP servers.</li>
+                        <li>Développement de skills org-wide chargés à la demande par l'agent.</li>
+                        <li>Fonctions transverses : scheduled automations, mémoire utilisateur, speech-to-text live (Whisper self-hosted via vLLM), OAuth Authorization Server pour les apps et agents tiers.</li>
+                        <li>Conception d'un backend Go en clean architecture (API, worker, CLI) couplé à un agent Python LangGraph (ReAct), avec un streaming des réponses en SSE.</li>
+                        <li>Développement du module Forms : génération de formulaires par LLM depuis le chat, sections et questions, publication versionnée, rôles (owner, co-owner, viewer).</li>
+                        <li>Implémentation de l'édition assistée par IA (« Ask Re AI to edit ») des formulaires et des personal skills, sur le modèle propose/accept, avec mutations versionnées et validation stricte des sorties du LLM.</li>
+                        <li>Mise en place d'automations déclenchées par les soumissions de formulaires : Transactional Outbox, worker idempotent, exécution at-least-once et run log.</li>
+                        <li>Développement de l'analytics : statistiques par question, suivi des viewers (ouvert, soumis, complété), export CSV.</li>
+                        <li>Sécurisation des workflows de l'agent : RBAC sur les connexions, guardrails, PII guard, human-in-the-loop sur les opérations en masse, callback tokens.</li>
+                        <li>Écriture de tests unitaires, d'intégration et end-to-end, et d'evals pour valider le comportement de l'agent.</li>
+                        <li>Déploiement sur Kubernetes avec des secrets Infisical, et observabilité avec OpenTelemetry.</li>
+                    </ul>
+
+                    <p>
+                        <div style="font-weight:500;">Environnement technique : Go, Python, LangGraph, Claude (Anthropic), vLLM, MCP, OAuth 2.0, PostgreSQL, REST, SSE, WebSocket, Slack API, OpenTelemetry, Docker, Kubernetes, Infisical.</div>
+                    </p>
                 </div>
 
                 <div class="item">
