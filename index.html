@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <title>Driss EL ABBADI</title>
@@ -21,6 +21,103 @@
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/orbit-1.css">
+    <style>
+        .wrapper {
+            max-width: 1100px;
+            margin-top: 24px;
+        }
+
+        .sidebar-wrapper {
+            width: 270px;
+        }
+
+        .main-wrapper {
+            padding: 48px 320px 48px 56px;
+        }
+
+        .main-wrapper .section {
+            margin-bottom: 48px;
+        }
+
+        .main-wrapper .section-title {
+            margin-bottom: 24px;
+        }
+
+        .main-wrapper .experiences-section .item {
+            margin-bottom: 28px;
+        }
+
+        .education-section .item {
+            margin-bottom: 15px;
+        }
+
+        .experiences-section .details {
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .experiences-section .project-intro {
+            margin-bottom: 8px;
+        }
+
+        .experiences-section .project-intro strong {
+            color: #3f4650;
+        }
+
+        .experiences-section .details ul {
+            margin: 0 0 14px;
+            padding-left: 20px;
+        }
+
+        .experiences-section .details li {
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .experiences-section .tech-stack {
+            margin: 12px 0 20px;
+            padding: 10px 12px;
+            border-left: 3px solid #42a8c0;
+            background: #f5f8fa;
+            font-size: 13px;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .skillset .details p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 991.98px) {
+            .wrapper {
+                margin-top: 0;
+            }
+
+            .sidebar-wrapper {
+                position: static;
+                width: auto;
+                min-height: 0;
+            }
+
+            .main-wrapper {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .main-wrapper {
+                padding: 28px 22px;
+            }
+
+            .main-wrapper .section-title {
+                font-size: 18px;
+            }
+
+            .main-wrapper .section-title .icon-holder {
+                margin-right: 4px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -69,8 +166,7 @@
 
         <div class="main-wrapper">
             <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Experiences
-                    Professionelles</h2>
+                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Expériences professionnelles</h2>
 
                 <div class="item">
                     <div class="meta">
@@ -81,9 +177,8 @@
                         <!--//upper-row-->
                         <div class="company">The [RE]DESIGN Group FR, Paris France</div>
                     </div>
-                </div>
                 <div class="details">
-                    <p>
+                    <p class="project-intro">
                         <strong>Plateforme Redesign (Marketplace, Assets, Unified API) :</strong>
                         Écosystème de microservices cloud-native qui forme la plateforme client de Redesign :
                         Marketplace e-commerce B2B (Dell, HP, Microsoft, Apple), asset management et Unified Portal.
@@ -91,43 +186,32 @@
 
                     <ul>
                         <li>Conception de microservices Go en clean architecture, avec une approche API-First (OpenAPI 3).</li>
-                        <li>Intégration de l'Authentication Service (JWT, SSO OIDC, MFA) et de l'Authorization Service (RBAC multi-tenant), derrière une API Gateway APISIX.</li>
-                        <li>Mise en place d'une architecture event-driven sur Kafka (Avro) avec Transactional Outbox et consumers idempotents.</li>
-                        <li>Développement de la Marketplace : catalogue, orders, invoices, Search Engine hybride et paiements Stripe (3-D Secure, Stripe Tax, recurring subscriptions, webhooks idempotents).</li>
-                        <li>Implémentation du subscription lifecycle : fulfilment worker de provisioning des licences Microsoft (polling, retries, rollback) et monitor de détection des écarts de facturation.</li>
-                        <li>Gestion des assets : asset management (bulk import, contracts, lifecycle) et modification du nombre de licences Microsoft.</li>
-                        <li>Développement de la Unified API et de la User API : companies, users, invitations, applications ; profils, memberships et payment methods maintenus par events.</li>
-                        <li>Automatisation de la synchronisation des données Dell, Salesforce et Microsoft par cronjobs (Argo Workflows).</li>
-                        <li>Déploiement GitOps sur Kubernetes (ArgoCD, Kustomize), avec migrations de schéma en production et rollouts par feature flags.</li>
-                        <li>Mise en place de la CI/CD avec GitHub Actions (tests, Trivy, govulncheck) et du monitoring avec OpenTelemetry, Prometheus, Loki et Grafana.</li>
+                        <li>Implémentation du subscription lifecycle des licences Microsoft : fulfilment worker de provisioning (polling, retries, rollback), modification du nombre de licences et monitor de détection des écarts de facturation.</li>
+                        <li>Intégration de la facturation récurrente Stripe : subscriptions, 3-D Secure, Stripe Tax et webhooks idempotents avec replay des events manqués.</li>
+                        <li>Mise en place d'une architecture event-driven sur Kafka (Avro) avec Transactional Outbox et consumers idempotents entre la Marketplace, la Unified API et la User API.</li>
+                        <li>Intégration de l'Authentication Service (JWT, SSO OIDC) et de l'Authorization Service (RBAC multi-tenant), derrière une API Gateway APISIX.</li>
+                        <li>Déploiement GitOps sur Kubernetes (ArgoCD, Kustomize) avec migrations de schéma en production et rollouts par feature flags ; CI/CD GitHub Actions (tests, Trivy, govulncheck) et observabilité avec OpenTelemetry, Prometheus, Loki et Grafana.</li>
                     </ul>
 
-                    <p>
-                        <div style="font-weight:500;">Environnement technique : Go, REST, OpenAPI 3, PostgreSQL, Redis, Kafka, Avro, APISIX, OpenTelemetry, Prometheus, Loki, Grafana, Docker, Kubernetes, ArgoCD, GitHub Actions.</div>
-                    </p>
+                    <div class="tech-stack"><strong>Environnement technique :</strong> Go, PostgreSQL, Redis, Kafka, Avro, REST, OpenAPI 3, APISIX, Docker, Kubernetes, ArgoCD, Kustomize, GitHub Actions, OpenTelemetry, Prometheus, Loki, Grafana.</div>
 
-                    <p>
+                    <p class="project-intro">
                         <strong>Re AI (Plateforme Agentique IA) :</strong>
                         Plateforme d'agent IA interne basée sur Claude, utilisée en production dans Slack et sur le web.
                     </p>
 
                     <ul>
-                        <li>Connexions : SaaS via OAuth (Slack, Jira, Confluence, GitHub, Salesforce, Microsoft, Monday, Ramp), infrastructure (Kubernetes, FortiGate, switches réseau, OpenStack), et intégration générique via OpenAPI specs et MCP servers.</li>
-                        <li>Développement de skills org-wide chargés à la demande par l'agent.</li>
-                        <li>Fonctions transverses : scheduled automations, mémoire utilisateur, speech-to-text live (Whisper self-hosted via vLLM), OAuth Authorization Server pour les apps et agents tiers.</li>
-                        <li>Conception d'un backend Go en clean architecture (API, worker, CLI) couplé à un agent Python LangGraph (ReAct), avec un streaming des réponses en SSE.</li>
-                        <li>Développement du module Forms : génération de formulaires par LLM depuis le chat, sections et questions, publication versionnée, rôles (owner, co-owner, viewer).</li>
-                        <li>Implémentation de l'édition assistée par IA (« Ask Re AI to edit ») des formulaires et des personal skills, sur le modèle propose/accept, avec mutations versionnées et validation stricte des sorties du LLM.</li>
-                        <li>Mise en place d'automations déclenchées par les soumissions de formulaires : Transactional Outbox, worker idempotent, exécution at-least-once et run log.</li>
-                        <li>Développement de l'analytics : statistiques par question, suivi des viewers (ouvert, soumis, complété), export CSV.</li>
-                        <li>Sécurisation des workflows de l'agent : RBAC sur les connexions, guardrails, PII guard, human-in-the-loop sur les opérations en masse, callback tokens.</li>
-                        <li>Écriture de tests unitaires, d'intégration et end-to-end, et d'evals pour valider le comportement de l'agent.</li>
-                        <li>Déploiement sur Kubernetes avec des secrets Infisical, et observabilité avec OpenTelemetry.</li>
+                        <li>Conception d'un backend Go en clean architecture (API, worker, CLI) couplé à un agent Python LangGraph (ReAct), avec streaming SSE.</li>
+                        <li>Intégration de l'agent aux outils de l'entreprise : SaaS via OAuth (Jira, Confluence, Salesforce, GitHub, Microsoft…), infrastructure (Kubernetes, FortiGate) et connecteurs génériques OpenAPI et MCP.</li>
+                        <li>Implémentation de l'édition assistée par LLM sur le modèle propose/accept : génération et modification de formulaires depuis le chat, mutations versionnées et validation stricte des sorties du modèle avant application.</li>
+                        <li>Développement de la transcription vocale en temps réel : relay WebSocket qui stream l'audio du navigateur vers le provider speech-to-text (Whisper self-hosted via vLLM) et renvoie les transcriptions partielles en live, avec accès sécurisé par ticket éphémère.</li>
+                        <li>Mise en place d'automations déclenchées par les soumissions de formulaires : Transactional Outbox, worker idempotent et exécution at-least-once.</li>
+                        <li>Sécurisation de l'agent : RBAC sur les connexions, guardrails, PII guard et human-in-the-loop sur les opérations en masse.</li>
+                        <li>Écriture de tests unitaires, d'intégration et end-to-end, et d'evals pour valider le comportement de l'agent en continu.</li>
                     </ul>
 
-                    <p>
-                        <div style="font-weight:500;">Environnement technique : Go, Python, LangGraph, Claude (Anthropic), vLLM, MCP, OAuth 2.0, PostgreSQL, REST, SSE, WebSocket, Slack API, OpenTelemetry, Docker, Kubernetes, Infisical.</div>
-                    </p>
+                    <div class="tech-stack"><strong>Environnement technique :</strong> Go, Python, LangGraph, PostgreSQL, REST, SSE, WebSocket, MCP, OAuth 2.0, vLLM, Docker, Kubernetes, OpenTelemetry.</div>
+                </div>
                 </div>
 
                 <div class="item">
@@ -139,16 +223,14 @@
                         <!--//upper-row-->
                         <div class="company">Hornetsecurity (anciennement Vade), Paris France</div>
                     </div>
-                </div>
                 <div class="details">
-                    <p>
-                        <p>
-                            <li><b>Marketplace-Gateway:</b></li>
-                            Le projet vise à simplifier l’intégration des produits Hornet Security pour les marketplaces. Elles envoient uniquement des notifications
-                            (création, conversion, annulation) à notre gateway. La gateway prend en charge les actions nécessaires côté Hornet Security.
-                            Cette solution est transparente pour les marketplaces, sans nécessiter d'intégration produit spécifique.              
-                        </p>
-    
+                    <p class="project-intro">
+                        <strong>Marketplace-Gateway :</strong>
+                        Le projet vise à simplifier l’intégration des produits Hornet Security pour les marketplaces. Elles envoient uniquement des notifications
+                        (création, conversion, annulation) à notre gateway. La gateway prend en charge les actions nécessaires côté Hornet Security.
+                        Cette solution est transparente pour les marketplaces, sans nécessiter d'intégration produit spécifique.
+                    </p>
+
                         <ul>
                             <li>
                                 Collaboration inter-équipes (produit, développement et QA) pour rédiger des spécifications techniques détaillées et valider les solutions implémentées.                           
@@ -172,12 +254,9 @@
                                 Mise en place de pipelines CI/CD avec Docker, GitLab CI, ArgoCD et Vault pour automatiser les tests, le déploiement, la gestion des versions et la sécurisation des secrets.                            
                             </li>
                         </ul>
-    
-                        <p>
-                        <div style="font-weight:500;">Environnement technique: Go, REST, RabbitMQ, Gitlab, Docker, Redis, Vault, ArgoCD, Swagger, Sonar, Pytest.
-                        </div>
-                        </p>
-                    <p>
+
+                    <div class="tech-stack"><strong>Environnement technique :</strong> Go, REST, RabbitMQ, GitLab, Docker, Redis, Vault, ArgoCD, Swagger, Sonar, Pytest.</div>
+                </div>
                 </div>
 
                 <div class="item">
@@ -202,60 +281,28 @@
                     </div>
                     <!--//meta-->
                     <div class="details">
-                        <p>
-                        <p>
-                            <li><b>Microservice Scan Documents:</b></li>
-                            Développement d'un microservice pour permettre aux responsables de magasins Stradivarius de gérer les documents administratifs.
-                            Le microservice encode et crypte les fichiers pour un stockage sécurisé sur un serveur NAS. Via des services Web, les responsables peuvent
-                            facilement télécharger, récupérer et gérer ces documents, assurant ainsi leur sécurité et accessibilité.
+                        <p class="project-intro">
+                            <strong>Microservice Livre de vente :</strong>
+                            Évolution d'un microservice métier pour améliorer la gestion du budget et des ventes des magasins Stradivarius.
+                            Il permet aux gérants de gérer le livre de vente via des services web et d'accéder aux documents administratifs
+                            des magasins, stockés de manière sécurisée.
                         </p>
 
                         <ul>
                             <li>
-                                Configuration d'API Gateway Kong, y compris routage, load balancing, rate limiting et des mécanismes d'authentification.     
+                                Développement des services de gestion du budget, des ventes, des observations et des rapports de vente et de budget.
                             </li>
                             <li>
-                                Développement d’un module d’authorisation OAuth2 et d’authentification OpenId connect.
+                                Mise en place du traçage de l’historique des ventes et du budget, ainsi que du cache des paramétrages avec Ehcache.
                             </li>
                             <li>
-                                Développement des services web REST CRUD pour la gestion des documents administratifs.
+                                Développement de services REST CRUD pour gérer les documents administratifs des magasins.
                             </li>
                             <li>
-                                Configuration des répertoires partagés et des contrôles d'accès pour le serveur NAS.    
+                                Sécurisation des fichiers par encodage et chiffrement, avec stockage sur un serveur NAS et configuration des répertoires partagés et des contrôles d'accès.
                             </li>
                             <li>
-                                Écriture des fonctions pour les tests unitaires avec Junit 5 et Mockito.
-                            </li>
-                        </ul>
-                        </p>
-
-                        <p>
-                        <p>
-                            <li><b>Microservice Livre de vente:</b></li>
-                            Inditex a exprimé le besoin d'adapter et développer de nouvelles fonctionnalités dans un
-                            microservice pour améliorer le budget et les ventes des magasins Stradivarius.
-                            Le microservice permet aux gérants de magasins Stradivarius d'appeler des services web
-                            qui gèrent le livre de vente du magasin afin de s'adapter aux besoins commerciaux.
-                        </p>
-
-                        <ul>
-                            <li>
-                                Développement des services de gestion du budget.
-                            </li>
-                            <li>
-                                Développement des services de gestion de vente.
-                            </li>
-                            <li>
-                                Développement des services de gestion des observations.
-                            </li>
-                            <li>
-                                Développement des services de gestion des rapport de vente et budget
-                            </li>
-                            <li>
-                                Développement des services de traçage de l’historique des ventes et du budget.
-                            </li>
-                            <li>
-                                Gestion du cache des paramétrages avec Ehcache.
+                                Configuration d'API Gateway Kong (routage, load balancing, rate limiting), et développement d'un module d'autorisation OAuth2 et d'authentification OpenID Connect.
                             </li>
                             <li>
                                 Analyse et correction des anomalies remontées sur Jira.
@@ -265,13 +312,7 @@
                             </li>
                         </ul>
 
-                        <p>
-                            <div style="font-weight:500;">Environnement technique: Java 11, Spring Boot, Spring Data JPA,
-                                Maven, REST, MySQL, MongoDb, Gitlab, Vault, Keycloak, Docker, GitHub Enterprise, Spinnaker,
-                                OpenShift Entreprise, Sonar, Swagger, JFrog, Junit5, Mockito. 
-                            </div>
-                        </p>
-                        </p>
+                        <div class="tech-stack"><strong>Environnement technique :</strong> Java 11, Spring Boot, Spring Data JPA, Maven, REST, MySQL, MongoDB, GitLab, Vault, Keycloak, Docker, GitHub Enterprise, Spinnaker, OpenShift Enterprise, Sonar, Swagger, JFrog, JUnit 5, Mockito.</div>
 
                     </div>
                     <!--//details-->
@@ -288,15 +329,13 @@
                     </div>
                     <!--//meta-->
                     <div class="details">
-                        <p>
-                        <p>
-                            <li><b>WorkFlow :</b></li>
+                        <p class="project-intro">
+                            <strong>Workflow :</strong>
                             Développement d’une application web qui couvre
                             les évènements (ouverture, contrôle, modification, validation
                             et clôture) des opérations commerciales à l’étranger (transfert,
                             finex, crédoc) pour le compte des clients de la Banque Marocaine de Commerce Exterieur.
                         </p>
-
                         <ul>
                             <li>
                                 Mise en place de l’architecture de la solution.
@@ -341,14 +380,9 @@
                                 Validation de la qualité de code avec SONAR
                             </li>
                         </ul>
-                        </p><br>
-
-                        <b>Environnement technique: JAVA/JEE (EJB3), Spring, Hibernate, Maven, SOAP, DevBooster(C#/.net),
+                        <div class="tech-stack"><strong>Environnement technique :</strong> JAVA/JEE (EJB3), Spring, Hibernate, Maven, SOAP, DevBooster (C#/.NET),
                             HTML, CSS, JavaScript, XML, WebSphere, Oracle 11, Gitlab, Jenkins, Sonar, Nexus, Junit5, Mockito.
-                        </b>
-
-                        </p>
-                        </p>
+                        </div>
                     </div>
                     <!--//details-->
                 </div>
@@ -358,7 +392,7 @@
             </section>
             <!--//section-->
 
-            <section class="section projects-section">
+            <section class="section education-section">
                 <h2 class="section-title"><span class="icon-holder"><i class="fas fa-archive"></i></span>Formation</h2>
 
                 <div class="item">
@@ -392,73 +426,36 @@
 
 
             <section class="skills-section section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>COMPETENCES</h2>
+                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>COMPÉTENCES</h2>
                 <div class="skillset">
                     <div class="item">
-                        <h3 class="level-title"> Système d’exploitation :</h3>
+                        <h3 class="level-title">Langages :</h3>
                         <div class="details">
-                            <p>
-                                Linux (Ubuntu), Windows 10.
-                            </p>
+                            <p>Go, Python, Java.</p>
                         </div>
-                        <h3 class="level-title">Language :</h3>
+                        <h3 class="level-title">Frameworks &amp; IA :</h3>
                         <div class="details">
-                            <p>
-                                GO, JAVA, C#, HTMl5, CSS3, JavaScript, SQL.
-                            </p>
+                            <p>LangGraph, Claude (Anthropic), vLLM.</p>
                         </div>
-                        <h3 class="level-title"> Framework :</h3>
+                        <h3 class="level-title">API &amp; Auth :</h3>
                         <div class="details">
-                            <p>
-                                Spring (MVC, Boot, Data JPA, Batch).
-                            </p>
+                            <p>REST, OpenAPI 3, SSE, WebSocket, MCP, OAuth 2.0, OIDC, JWT, RBAC.</p>
                         </div>
-                        <h3 class="level-title">Serveur d’application :</h3>
+                        <h3 class="level-title">Données &amp; Messaging :</h3>
                         <div class="details">
-                            <p>
-                                WildFly, Tomcat, Websphere.
-                            </p>
+                            <p>PostgreSQL, Redis, Kafka, Avro.</p>
                         </div>
-                        <h3 class="level-title">Web Service :</h3>
+                        <h3 class="level-title">Cloud &amp; Déploiement :</h3>
                         <div class="details">
-                            <p>
-                                REST/SOAP.
-                            </p>
+                            <p>Docker, Kubernetes, ArgoCD, Kustomize, APISIX.</p>
                         </div>
-                        <h3 class="level-title"> Base de données :</h3>
+                        <h3 class="level-title">CI/CD &amp; Sécurité :</h3>
                         <div class="details">
-                            <p>
-                                MySQL, Oracle, MongoDb, Casandra, InfluxDb.
-                            </p>
+                            <p>GitHub Actions, Trivy, govulncheck.</p>
                         </div>
-
-                        <h3 class="level-title"> Test :</h3>
+                        <h3 class="level-title">Observabilité :</h3>
                         <div class="details">
-                            <p>
-                                Junit, Mockito, Pytest.
-                            </p>
-                        </div>
-
-                        <h3 class="level-title"> CI/CD </h3>
-                        <div class="details">
-                            <p>
-                                GitHub Entreprise, GitLab, Jenkins, Docker, Spinnaker, ArgoCD, Openshift Entreprise,
-                                Sonar, Nexus.
-                            </p>
-                        </div>
-
-                        <h3 class="level-title">  Observability </h3>
-                        <div class="details">
-                            <p>
-                                Kibana, Grafana, Prometheus, OpenTelemetry, Jaeger.
-                            </p>
-                        </div>
-
-                        <h3 class="level-title"> Agile </h3>
-                        <div class="details">
-                            <p>
-                                Kanban, Scrum.
-                            </p>
+                            <p>OpenTelemetry, Prometheus, Loki, Grafana.</p>
                         </div>
                     </div>
                 </div>
