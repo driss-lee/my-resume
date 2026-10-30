@@ -185,12 +185,12 @@
                     </p>
 
                     <ul>
-                        <li>Conception de microservices Go en clean architecture, avec une approche API-First (OpenAPI 3).</li>
-                        <li>Implémentation du subscription lifecycle des licences Microsoft : fulfilment worker de provisioning (polling, retries, rollback), modification du nombre de licences et monitor de détection des écarts de facturation.</li>
-                        <li>Intégration de la facturation récurrente Stripe : subscriptions, 3-D Secure, Stripe Tax et webhooks idempotents avec replay des events manqués.</li>
-                        <li>Mise en place d'une architecture event-driven sur Kafka (Avro) avec Transactional Outbox et consumers idempotents entre la Marketplace, la Unified API et la User API.</li>
-                        <li>Intégration de l'Authentication Service (JWT, SSO OIDC) et de l'Authorization Service (RBAC multi-tenant), derrière une API Gateway APISIX.</li>
-                        <li>Déploiement GitOps sur Kubernetes (ArgoCD, Kustomize) avec migrations de schéma en production et rollouts par feature flags ; CI/CD GitHub Actions (tests, Trivy, govulncheck) et observabilité avec OpenTelemetry, Prometheus, Loki et Grafana.</li>
+                        <li>Conception de microservices Go en clean architecture et définition de contrats API-first documentés avec OpenAPI 3.</li>
+                        <li>Automatisation du cycle de vie des licences Microsoft, du provisioning à l'ajustement des quantités, avec un worker résilient (polling, retries, rollback) et un monitor des écarts de facturation.</li>
+                        <li>Intégration de la facturation récurrente Stripe, couvrant les abonnements, 3-D Secure et Stripe Tax, avec des webhooks idempotents et le rejeu des événements manqués.</li>
+                        <li>Fiabilisation des échanges entre Marketplace, Unified API et User API par une architecture Kafka/Avro, Transactional Outbox et consumers idempotents.</li>
+                        <li>Sécurisation des accès multi-tenant en intégrant l'authentification JWT/SSO OIDC et l'autorisation RBAC derrière la gateway APISIX.</li>
+                        <li>Industrialisation des mises en production sur Kubernetes avec ArgoCD, Kustomize, migrations de schéma et feature flags ; automatisation des contrôles CI/CD et mise en place de l'observabilité.</li>
                     </ul>
 
                     <div class="tech-stack"><strong>Environnement technique :</strong> Go, PostgreSQL, Redis, Kafka, Avro, REST, OpenAPI 3, APISIX, Docker, Kubernetes, ArgoCD, Kustomize, GitHub Actions, OpenTelemetry, Prometheus, Loki, Grafana.</div>
@@ -202,13 +202,13 @@
                     </p>
 
                     <ul>
-                        <li>Conception d'un backend Go en clean architecture (API, worker, CLI) couplé à un agent Python LangGraph (ReAct), avec streaming SSE.</li>
-                        <li>Intégration de l'agent aux outils de l'entreprise : SaaS via OAuth (Jira, Confluence, Salesforce, GitHub, Microsoft…), infrastructure (Kubernetes, FortiGate) et connecteurs génériques OpenAPI et MCP.</li>
-                        <li>Implémentation de l'édition assistée par LLM sur le modèle propose/accept : génération et modification depuis le chat de contenus variés (formulaires, HTML, CSV, graphiques et autres formats), avec mutations versionnées et validation stricte des sorties du modèle avant application.</li>
-                        <li>Développement de la transcription vocale en temps réel : relay WebSocket qui stream l'audio du navigateur vers le provider speech-to-text (Whisper self-hosted via vLLM) et renvoie les transcriptions partielles en live, avec accès sécurisé par ticket éphémère.</li>
-                        <li>Mise en place d'automations déclenchées par les soumissions de formulaires : Transactional Outbox, worker idempotent et exécution at-least-once.</li>
-                        <li>Sécurisation de l'agent : RBAC sur les connexions, guardrails, PII guard et human-in-the-loop sur les opérations en masse.</li>
-                        <li>Écriture de tests unitaires, d'intégration et end-to-end, et d'evals pour valider le comportement de l'agent en continu.</li>
+                        <li>Conception du backend Go (API, worker, CLI) et intégration d'un agent Python LangGraph/ReAct, avec diffusion des réponses en SSE.</li>
+                        <li>Connexion de l'agent aux outils et données de l'entreprise : applications SaaS via OAuth, infrastructure interne, et intégrations extensibles via OpenAPI et MCP.</li>
+                        <li>Mise en place d'une édition assistée par LLM en mode propose/accept, permettant de créer et modifier formulaires, HTML, CSV, graphiques et autres contenus ; mutations versionnées et validation stricte avant application.</li>
+                        <li>Ajout de la transcription vocale en temps réel avec un relais WebSocket vers Whisper self-hosted via vLLM, diffusion des transcriptions partielles et accès protégé par ticket éphémère.</li>
+                        <li>Automatisation des actions déclenchées par les soumissions de formulaires grâce à un Transactional Outbox et un worker idempotent avec exécution at-least-once.</li>
+                        <li>Encadrement des actions de l'agent par le RBAC des connexions, des guardrails, la protection des données personnelles et une validation humaine pour les opérations en masse.</li>
+                        <li>Validation de la fiabilité de l'agent par des tests unitaires, d'intégration et end-to-end, complétés par des evals de comportement.</li>
                     </ul>
 
                     <div class="tech-stack"><strong>Environnement technique :</strong> Go, Python, LangGraph, PostgreSQL, REST, SSE, WebSocket, MCP, OAuth 2.0, vLLM, Docker, Kubernetes, OpenTelemetry.</div>
@@ -227,34 +227,18 @@
                 <div class="details">
                     <p class="project-intro">
                         <strong>Marketplace-Gateway :</strong>
-                        Le projet vise à simplifier l’intégration des produits Hornet Security pour les marketplaces. Elles envoient uniquement des notifications
-                        (création, conversion, annulation) à notre gateway. La gateway prend en charge les actions nécessaires côté Hornet Security.
-                        Cette solution est transparente pour les marketplaces, sans nécessiter d'intégration produit spécifique.
+                        Développement d'une passerelle qui simplifie la commercialisation des produits Hornetsecurity depuis les marketplaces.
+                        Celles-ci transmettent les événements de création, conversion ou annulation ; la gateway orchestre les actions correspondantes
+                        côté Hornetsecurity sans imposer d'intégration spécifique du catalogue aux partenaires.
                     </p>
 
-                        <ul>
-                            <li>
-                                Collaboration inter-équipes (produit, développement et QA) pour rédiger des spécifications techniques détaillées et valider les solutions implémentées.                           
-                            </li>
-                            <li>
-                                Conception et documentation API avec OpenAPI 3 pour favoriser une approche API-First.  
-                            </li>
-                            <li>
-                                Développement d’un webhook sécurisé permettant aux marketplaces d’envoyer des notifications (création, conversion, annulation) via des appels API.
-                            </li>
-                            <li>
-                                Gestion asynchrone des notifications via RabbitMQ, avec traitement et envoi des résultats aux marketplaces.
-                            </li>
-                            <li>
-                                Développement d’un worker en Go pour traiter les notifications, effectuer les actions nécessaires et interagir avec les systèmes internes, tels que CP et Subman.                          
-                            </li>
-                            <li>
-                                Mise en place de tests fonctionnels avec Python et tests unitaires avec Go pour valider la fiabilité et les performances des services.
-                            </li>
-                            <li>
-                                Mise en place de pipelines CI/CD avec Docker, GitLab CI, ArgoCD et Vault pour automatiser les tests, le déploiement, la gestion des versions et la sécurisation des secrets.                            
-                            </li>
-                        </ul>
+                    <ul>
+                        <li>Traduction des besoins produit en spécifications techniques, en coordination avec les équipes développement et QA.</li>
+                        <li>Conception d'API documentées avec OpenAPI 3 et développement d'un webhook sécurisé pour recevoir les notifications des marketplaces.</li>
+                        <li>Traitement asynchrone des événements via RabbitMQ ; réalisation d'un worker Go qui orchestre les actions nécessaires avec les systèmes internes CP et Subman.</li>
+                        <li>Vérification des parcours par des tests unitaires Go et des tests fonctionnels Python.</li>
+                        <li>Automatisation des tests et déploiements avec Docker, GitLab CI et ArgoCD, et gestion des secrets avec Vault.</li>
+                    </ul>
 
                     <div class="tech-stack"><strong>Environnement technique :</strong> Go, REST, RabbitMQ, GitLab, Docker, Redis, Vault, ArgoCD, Swagger, Sonar, Pytest.</div>
                 </div>
@@ -273,32 +257,29 @@
                     <div class="details">
                         <p class="project-intro">
                             <strong>Microservice Livre de vente :</strong>
-                            Évolution d'un microservice métier pour améliorer la gestion du budget et des ventes des magasins Stradivarius.
-                            Il permet aux gérants de gérer le livre de vente via des services web et d'accéder aux documents administratifs
-                            des magasins, stockés de manière sécurisée.
+                            Évolution d'un microservice métier au cœur du suivi budgétaire et commercial des magasins Stradivarius.
+                            Il permet aux gérants de consulter et piloter le livre de vente, tout en accédant aux documents administratifs
+                            du magasin via des services web sécurisés.
                         </p>
 
                         <ul>
                             <li>
-                                Développement des services de gestion du budget, des ventes, des observations et des rapports de vente et de budget.
+                                Développement des services couvrant les budgets, les ventes, les observations et les rapports associés.
                             </li>
                             <li>
-                                Mise en place du traçage de l’historique des ventes et du budget, ainsi que du cache des paramétrages avec Ehcache.
+                                Amélioration du suivi des activités grâce à l'historisation des ventes et des budgets, avec mise en cache des paramètres via Ehcache.
                             </li>
                             <li>
-                                Développement de services REST CRUD pour gérer les documents administratifs des magasins.
+                                Extension du microservice avec des services REST CRUD pour la gestion des documents administratifs des magasins.
                             </li>
                             <li>
-                                Sécurisation des fichiers par encodage et chiffrement, avec stockage sur un serveur NAS et configuration des répertoires partagés et des contrôles d'accès.
+                                Protection des documents par encodage et chiffrement avant stockage sur NAS, avec configuration des répertoires partagés et des contrôles d'accès.
                             </li>
                             <li>
-                                Configuration d'API Gateway Kong (routage, load balancing, rate limiting), et développement d'un module d'autorisation OAuth2 et d'authentification OpenID Connect.
+                                Sécurisation de l'exposition des services via Kong (routage, load balancing, rate limiting) et intégration de l'autorisation OAuth2 et de l'authentification OpenID Connect.
                             </li>
                             <li>
-                                Analyse et correction des anomalies remontées sur Jira.
-                            </li>
-                            <li>
-                                Écriture des fonctions pour les tests unitaires avec Junit 5 et Mockito.
+                                Traitement des anomalies signalées dans Jira et renforcement de la qualité par des tests unitaires avec JUnit 5 et Mockito.
                             </li>
                         </ul>
 
@@ -320,54 +301,29 @@
                     <!--//meta-->
                     <div class="details">
                         <p class="project-intro">
-                            <strong>Workflow :</strong>
-                            Développement d’une application web qui couvre
-                            les évènements (ouverture, contrôle, modification, validation
-                            et clôture) des opérations commerciales à l’étranger (transfert,
-                            finex, crédoc) pour le compte des clients de la Banque Marocaine de Commerce Exterieur.
+                            <strong>Workflow des opérations bancaires internationales :</strong>
+                            Développement d’une application web qui accompagne les opérations commerciales à l’étranger
+                            des clients de la Banque Marocaine de Commerce Extérieur — transferts, Finex et crédocs —
+                            de leur ouverture jusqu’à leur clôture, en centralisant les étapes de contrôle, de modification et de validation.
                         </p>
                         <ul>
                             <li>
-                                Mise en place de l’architecture de la solution.
+                                Conception de l’architecture et contribution au cadrage fonctionnel avec les équipes métier.
                             </li>
                             <li>
-                                Participation à l’élaboration et validation de cahier des charges et spécifications
-                                fonctionnelles.
+                                Réalisation d’un EJB métier intégrant les services web du système d’information pour traiter les opérations selon les règles définies.
                             </li>
                             <li>
-                                Conception et réalisation d’un EJB répondant aux spécifications fonctionnelles, en
-                                sollicitant les services web du SI.
+                                Automatisation du traitement comptable après validation grâce à un batch Java générant les comptes rendus d’événements (CRE).
                             </li>
                             <li>
-                                Développement d’un batch Java générateur des comptes rendu des événements (CRE) des
-                                pièces comptables validées.
+                                Développement de services de génération de rapports commerciaux et d’envoi de notifications par e-mail.
                             </li>
                             <li>
-                                Développement de services de génération des rapports commerciaux.
+                                Création des écrans de saisie et de consultation, ainsi que du schéma Oracle (tables, index et séquences) et des entités associées.
                             </li>
                             <li>
-                                Développement de services d’envoi de mail.
-                            </li>
-                            <li>
-                                Création du schéma, des tables, des index et des séquences avec des scripts SQL.
-                            </li>
-                            <li>
-                                Génération et correction des entités à partir de la base de données.
-                            </li>
-                            <li>
-                                Réalisation des interfaces graphiques de saisie et d’affichage de données.
-                            </li>
-                            <li>
-                                Automatisation des scripts de build et déploiement.
-                            </li>
-                            <li>
-                                Écriture des fonctions pour les tests unitaires avec Junit 5 et Mockito.
-                            </li>
-                            <li>
-                                Recette des tests de services web par SoapUI.
-                            </li>
-                            <li>
-                                Validation de la qualité de code avec SONAR
+                                Automatisation des scripts de build et de déploiement, validation par des tests unitaires (JUnit 5, Mockito), des tests de services avec SoapUI et l’analyse qualité Sonar.
                             </li>
                         </ul>
                         <div class="tech-stack"><strong>Environnement technique :</strong> JAVA/JEE (EJB3), Spring, Hibernate, Maven, SOAP, DevBooster (C#/.NET),
@@ -421,7 +377,7 @@
                     <div class="item">
                         <h3 class="level-title">Système d’exploitation :</h3>
                         <div class="details">
-                            <p>MacOs, Linux (Ubuntu), Windows 10.</p>
+                            <p>MacOS, Linux (Ubuntu), Windows 10.</p>
                         </div>
                         <h3 class="level-title">Language :</h3>
                         <div class="details">
