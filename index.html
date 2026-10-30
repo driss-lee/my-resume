@@ -235,7 +235,11 @@
                     <ul>
                         <li>Traduction des besoins produit en spécifications techniques, en coordination avec les équipes développement et QA.</li>
                         <li>Conception d'API documentées avec OpenAPI 3 et développement d'un webhook sécurisé pour recevoir les notifications des marketplaces.</li>
+                        <li>Développement d'une fonctionnalité d'import pour faciliter l'intégration des données des marketplaces et leur prise en charge par la gateway.</li>
                         <li>Traitement asynchrone des événements via RabbitMQ ; réalisation d'un worker Go qui orchestre les actions nécessaires avec les systèmes internes CP et Subman.</li>
+                        <li>Idempotence du traitement des événements pour éviter les doubles provisionnements lors des nouvelles tentatives d'envoi des webhooks.</li>
+                        <li>Mise en place d'un suivi des événements pour les partenaires, avec consultation des résultats de traitement et relance des échecs.</li>
+                        <li>Automatisation de la réconciliation entre les abonnements des marketplaces et l'état des licences Hornetsecurity afin de détecter les écarts.</li>
                         <li>Vérification des parcours par des tests unitaires Go et des tests fonctionnels Python.</li>
                         <li>Automatisation des tests et déploiements avec Docker, GitLab CI et ArgoCD, et gestion des secrets avec Vault.</li>
                     </ul>

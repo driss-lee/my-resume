@@ -159,6 +159,15 @@
                                 Asynchronous notification handling via RabbitMQ, with processing and sending results back to the marketplaces.
                              </li>
                             <li>
+                                Implemented idempotent event processing to prevent duplicate provisioning when webhook notifications are retried.
+                            </li>
+                            <li>
+                                Built a partner-facing event status view to track processing results and retry failed events.
+                            </li>
+                            <li>
+                                Automated reconciliation between marketplace subscriptions and Hornetsecurity license state to detect discrepancies.
+                            </li>
+                            <li>
                                 Development of a Go worker to process notifications, perform necessary actions, and interact with internal systems like CP and Subman.
                             </li>
                             <li>
