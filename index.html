@@ -180,8 +180,8 @@
                 <div class="details">
                     <p class="project-intro">
                         <strong>Plateforme Redesign (Marketplace, Assets, Unified API) :</strong>
-                        Écosystème de microservices cloud-native qui forme la plateforme client de Redesign :
-                        Marketplace e-commerce B2B (Dell, HP, Microsoft, Apple), asset management et Unified Portal.
+                        Développement d'une plateforme cloud-native permettant aux entreprises de gérer leurs achats IT et leurs assets depuis un portail unifié.
+                        Elle propose une marketplace B2B pour les produits Dell, HP, Microsoft et Apple, ainsi que la gestion du cycle de vie des assets et des abonnements.
                     </p>
 
                     <ul>
@@ -197,13 +197,14 @@
 
                     <p class="project-intro">
                         <strong>Re AI (Plateforme Agentique IA) :</strong>
-                        Plateforme d'agent IA interne basée sur Claude, utilisée en production dans Slack et sur le web.
+                        Développement d'un agent IA interne basé sur Claude, disponible dans Slack et sur le web pour aider les équipes à interagir avec leurs outils et données métier.
+                        La plateforme exécute des tâches, automatise des workflows et génère ou modifie différents contenus et formats de fichiers à partir d'une conversation, avec validation humaine lorsque nécessaire.
                     </p>
 
                     <ul>
                         <li>Conception d'un backend Go en clean architecture (API, worker, CLI) couplé à un agent Python LangGraph (ReAct), avec streaming SSE.</li>
                         <li>Intégration de l'agent aux outils de l'entreprise : SaaS via OAuth (Jira, Confluence, Salesforce, GitHub, Microsoft…), infrastructure (Kubernetes, FortiGate) et connecteurs génériques OpenAPI et MCP.</li>
-                        <li>Implémentation de l'édition assistée par LLM sur le modèle propose/accept : génération et modification de formulaires depuis le chat, mutations versionnées et validation stricte des sorties du modèle avant application.</li>
+                        <li>Implémentation de l'édition assistée par LLM sur le modèle propose/accept : génération et modification depuis le chat de contenus variés (formulaires, HTML, CSV, graphiques et autres formats), avec mutations versionnées et validation stricte des sorties du modèle avant application.</li>
                         <li>Développement de la transcription vocale en temps réel : relay WebSocket qui stream l'audio du navigateur vers le provider speech-to-text (Whisper self-hosted via vLLM) et renvoie les transcriptions partielles en live, avec accès sécurisé par ticket éphémère.</li>
                         <li>Mise en place d'automations déclenchées par les soumissions de formulaires : Transactional Outbox, worker idempotent et exécution at-least-once.</li>
                         <li>Sécurisation de l'agent : RBAC sur les connexions, guardrails, PII guard et human-in-the-loop sur les opérations en masse.</li>
