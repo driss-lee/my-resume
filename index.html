@@ -179,7 +179,7 @@
                     </div>
                 <div class="details">
                     <p class="project-intro">
-                        <strong>Plateforme Redesign (Marketplace, Assets, Unified API) :</strong>
+                        <strong>Redesign Plateform (Marketplace, Assets, Unified API) :</strong>
                         Développement d'une plateforme cloud-native permettant aux entreprises de gérer leurs achats IT et leurs assets depuis un portail unifié.
                         Elle propose une marketplace B2B pour les produits Dell, HP, Microsoft et Apple, ainsi que la gestion du cycle de vie des assets et des abonnements.
                     </p>
@@ -190,28 +190,28 @@
                         <li>Intégration de la facturation récurrente Stripe, couvrant les abonnements, 3-D Secure et Stripe Tax, avec des webhooks idempotents et le rejeu des événements manqués.</li>
                         <li>Fiabilisation des échanges entre Marketplace, Unified API et User API par une architecture Kafka/Avro, Transactional Outbox et consumers idempotents.</li>
                         <li>Sécurisation des accès multi-tenant en intégrant l'authentification JWT/SSO OIDC et l'autorisation RBAC derrière la gateway APISIX.</li>
-                        <li>Industrialisation des mises en production sur Kubernetes avec ArgoCD, Kustomize, migrations de schéma et feature flags ; automatisation des contrôles CI/CD et mise en place de l'observabilité.</li>
+                        <li>Industrialisation des mises en production sur Kubernetes avec ArgoCD, Kustomize, migrations de schéma et feature flags, automatisation des contrôles CI/CD et mise en place de l'observabilité.</li>
                     </ul>
 
-                    <div class="tech-stack"><strong>Environnement technique :</strong> Go, PostgreSQL, Redis, Kafka, Avro, REST, OpenAPI 3, APISIX, Docker, Kubernetes, ArgoCD, Kustomize, GitHub Actions, OpenTelemetry, Prometheus, Loki, Grafana.</div>
+                    <div class="tech-stack"><strong>Environnement technique :</strong> Go, PostgreSQL, Redis, Kafka, Avro, REST, OpenAPI 3, APISIX, Docker, Kubernetes, ArgoCD, GitHub Actions, OpenTelemetry, Prometheus, Loki, Grafana.</div>
 
                     <p class="project-intro">
-                        <strong>Re AI (Plateforme Agentique IA) :</strong>
+                        <strong>Re-AI (Agentic Platform AI) :</strong>
                         Développement d'un agent IA interne basé sur Claude, disponible dans Slack et sur le web pour aider les équipes à interagir avec leurs outils et données métier.
                         La plateforme exécute des tâches, automatise des workflows et génère ou modifie différents contenus et formats de fichiers à partir d'une conversation, avec validation humaine lorsque nécessaire.
                     </p>
 
                     <ul>
-                        <li>Conception du backend Go (API, worker, CLI) et intégration d'un agent Python LangGraph/ReAct, avec diffusion des réponses en SSE.</li>
+                        <li>Conception du backend Go (API, worker, CLI) et intégration d'un agent Python LangGraph, avec diffusion des réponses en SSE.</li>
                         <li>Connexion de l'agent aux outils et données de l'entreprise : applications SaaS via OAuth, infrastructure interne, et intégrations extensibles via OpenAPI et MCP.</li>
-                        <li>Mise en place d'une édition assistée par LLM en mode propose/accept, permettant de créer et modifier formulaires, HTML, CSV, graphiques et autres contenus ; mutations versionnées et validation stricte avant application.</li>
+                        <li>Mise en place d'une édition assistée par LLM en mode propose/accept, permettant de créer et modifier formulaires, HTML, CSV, graphiques et autres contenus, mutations versionnées et validation stricte avant application.</li>
                         <li>Ajout de la transcription vocale en temps réel avec un relais WebSocket vers Whisper self-hosted via vLLM, diffusion des transcriptions partielles et accès protégé par ticket éphémère.</li>
                         <li>Automatisation des actions déclenchées par les soumissions de formulaires grâce à un Transactional Outbox et un worker idempotent avec exécution at-least-once.</li>
                         <li>Encadrement des actions de l'agent par le RBAC des connexions, des guardrails, la protection des données personnelles et une validation humaine pour les opérations en masse.</li>
                         <li>Validation de la fiabilité de l'agent par des tests unitaires, d'intégration et end-to-end, complétés par des evals de comportement.</li>
                     </ul>
 
-                    <div class="tech-stack"><strong>Environnement technique :</strong> Go, Python, LangGraph, PostgreSQL, REST, SSE, WebSocket, MCP, OAuth 2.0, vLLM, Docker, Kubernetes, OpenTelemetry.</div>
+                    <div class="tech-stack"><strong>Environnement technique :</strong> Go, LangGraph, PostgreSQL, REST, SSE, WebSocket, MCP, OAuth 2.0, vLLM, Docker, Kubernetes, OpenTelemetry.</div>
                 </div>
                 </div>
 
@@ -386,7 +386,7 @@
                         </div>
                         <h3 class="level-title">Language :</h3>
                         <div class="details">
-                            <p>GO, JAVA, C#, HTMl5, CSS3, JavaScript, SQL, Python.</p>
+                            <p>GO, JAVA, Python, C#, HTMl5, CSS3, JavaScript, SQL.</p>
                         </div>
                         <h3 class="level-title">Framework :</h3>
                         <div class="details">
